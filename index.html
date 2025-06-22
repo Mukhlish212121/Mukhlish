@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,65 +17,65 @@
             --gray-color: #6b7280;
             --transition: all 0.3s ease-in-out;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
             background-color: #F5F5DC;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        .container {  /*inget container itu  div pertama di navbar, content maupun di footer*/
+                max-width: 1200px; /*jarak maksimal ke pinggir*/
+                margin: 0 auto; /*mengatur jarak antar element di container*/
+                padding: 0 20px; /*mengatur jarak di dalam element*/
         }
-        
-        /* Navbar Styles */
+
+        /*Navbar Styles*/
         .navbar {
-            background-color: var(--light-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
+            background-color: var(--light-color); /*membedakan warna navbar dengan content*/
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /*memberikan efek bayangan di bawah navbar*/
+            position: sticky; /*supaya posisi navbarnya gak kebawa ketika web di scroll*/
+            top: 0; /*elemen wajib kalo mau setiing position sticky*/
             z-index: 1000;
         }
-        
+
         .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+            display: flex; /*membuat isi nya mengesuaikan ukuran layar*/
+            justify-content: space-between; /*membuat isinya justify apal meureun*/
+            align-items: center; /*membuat semua item di salamnya di tengah-tengah atara atas dan bawah*/
+            padding: 15px 0; /*jarak dalam berdasarkan atas dan bawah*/
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+            text-decoration: none; /*menghilangkan garis bawah*/
+            display: flex; /*gak tahu*/
+            align-items: center; /*meh di tengah*/
         }
-        
+
         .logo i {
             margin-right: 10px;
         }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
+
+        .nav-links { /*link nu bakal dijadikan tombol*/
+            display: flex; /*memposisikan sesuai dengan div nya*/
+            list-style: none; /*menghilangkan angka urutan 1. 2. */
         }
-        
+
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 30px; /*membuat jarak antar link dengan mengatur sisi kirina*/
         }
-        
-        .nav-links a {
+
+        .nav-links a { /*ngatur link tulisannya*/
             color: var(--dark-color);
             text-decoration: none;
             font-weight: 500;
@@ -83,13 +83,13 @@
             position: relative;
             padding-bottom: 5px;
         }
-        
+
         .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
+            color: var(--primary-color); /*menseting warna ketika di halaman trersebut dan ketika kursor di arahkan ke sana*/
         }
-        
+
         .nav-links a.active::after {
-            content: '';
+            content: ''; /*sigana sapaket*/
             position: absolute;
             bottom: 0;
             left: 0;
@@ -97,9 +97,9 @@
             height: 2px;
             background-color: var(--primary-color);
         }
-        
-        .hamburger {
-            display: none;
+
+        .hamburger { /*ngatur tumbol yang bentuknya seperti berger*/
+            display: none; /*menghilangkan keberadaaannya*/
             cursor: pointer;
             background: none;
             border: none;
@@ -107,26 +107,26 @@
             color: var(--dark-color);
             z-index: 1001;
         }
-        
-        /* Content Styles */
+
+        /*Content Section*/
         .content {
             padding: 80px 0;
         }
-        
+
         .section {
             display: none;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 0.5 ease-in-out;
         }
-        
+
         .section.active {
             display: block;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -187,7 +187,7 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
-        .btn {
+        .btn, #arah2 {
             display: inline-block;
             background-color: var(--primary-color);
             color: var(--light-color);
@@ -203,7 +203,51 @@
             background-color: transparent;
             color: var(--primary-color);
         }
-        
+
+        #arah2:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /*Arah Kiblat Section*/
+
+        .back-arah {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            border: 1px solid var(--primary-light);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            padding: 50px 50px 50px 50px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+       th, td {
+        border: 1px solid;
+        border-color: var(--primary-color);
+        padding: 8px;
+        text-align: center;
+       }
+
+       button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            margin: 15px 15px;
+       }
+
         /* Project Section */
         .project-grid {
             display: grid;
@@ -245,7 +289,7 @@
             color: var(--gray-color);
             margin-bottom: 15px;
         }
-        
+
         /* About Section */
         .about-container {
             display: flex;
@@ -329,38 +373,38 @@
             font-size: 0.9rem;
             margin-bottom: 10px;
         }
-        
-        /* Footer */
+
+        /*footer*/
         footer {
             background-color: var(--primary-dark);
             color: var(--light-color);
             padding: 60px 0 30px;
             margin-top: 60px;
         }
-        
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
-        
+
         .footer-logo {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--light-color);
         }
-        
+
         .footer-about {
             margin-bottom: 20px;
             color: rgba(255, 255, 255, 0.7);
         }
-        
+
         .footer-social {
             display: flex;
             gap: 15px;
         }
-        
+
         .footer-social a {
             color: var(--light-color);
             font-size: 1.2rem;
@@ -425,89 +469,33 @@
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--light-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.3s ease-in-out;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .hero {
-                height: 300px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!--Navbar-->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a href="#" class="logo">Ukeiz Buzz</a>
-            <button class="hamburger" id="hamburger">
+            <a href="#" class="logo">Ukei Buzz</a> 
+            <button class="hamburger" id="hamburger"> 
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#" class="nav-link" data-section="proyek1">Karya Saya</a></li>
+                <li><a href="#" class="nav-link" data-section="karya">Karya Saya</a></li>
                 <li><a href="#" class="nav-link" data-section="tentang">Tentang</a></li>
             </ul>
         </div>
     </nav>
-    
-    <!-- Content -->
+
+    <!--Content-->
     <div class="container content">
-        <!-- Home Section -->
+        <!--Home Section-->
         <div id="home" class="section active">
             <div class="hero">
                 <div class="hero-content">
-                    <h1>Selamat Datang di Ukeiz Buzz</h1>
+                    <h1>Selamat datang di Ukeiz Buzz</h1>
                     <p>Platform pribadi saya yang berisi tentang karya-karya saya dalam mendalami ilmu komputer khususnya dalam pengaplikasian matematika.</p>
-                    <a href="#proyek1" class="btn">Karya Saya</a>
+                    <a href="#karya" class="btn">Karya Saya</a>
                 </div>
             </div>
             
@@ -515,53 +503,34 @@
                 <p>Perkenalkan nama saya Mukhlish. Saya suka mendalami ilmu komputer salah satunya adalah dengan membuat platform pribadi. Platform yang akan menampilkan karya-karya saya mengenai berbagai ilmu.</p>
             </div>
         </div>
-        
-        <!-- Proyek 1 Section -->
-        <div id="proyek1" class="section">
+
+        <!--Karya Saya Section-->
+        <div id="karya" class="section">
             <h2 class="section-title">Karya Saya</h2>
-            
+
             <div class="section-content">
-                <p>Bagian ini adalah daftar berbagai proyek yang telah saya buat yang kemudian menjadi sebuah karya</p>
+                <p>Ini adalah bagian untuk megakses berbagai karya yang telah saya buat</p>
             </div>
-            
+
             <div class="project-grid">
                 <div class="project-card">
-                    <img src="https://picsum.photos/seed/brownproject1/600/400.jpg" alt="Proyek Coklat 1" class="project-img">
                     <div class="project-info">
                         <h3>Rumus Arah Kiblat</h3>
                         <p>Membadingkan arah kiblat antara rumus bumi bulat dan bumi datar</p>
-                        <a href="#" class="btn">Ayo Membandingkan</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://picsum.photos/seed/brownproject2/600/400.jpg" alt="Proyek Coklat 2" class="project-img">
-                    <div class="project-info">
-                        <h3>Rumus Arah Kiblat</h3>
-                        <p>Membadingkan arah kiblat antara rumus bumi bulat dan bumi datar</p>
-                        <a href="#" class="btn">Ayo Membandingkan</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://picsum.photos/seed/brownproject3/600/400.jpg" alt="Proyek Coklat 3" class="project-img">
-                    <div class="project-info">
-                        <h3>Rumus Arah Kiblat</h3>
-                        <p>Membadingkan arah kiblat antara rumus bumi bulat dan bumi datar</p>
-                        <a href="#" class="btn">Ayo Membandingkan</a>
+                        <a href="#" id="arah2" class="nav-link" data-section="arah">Ayo Membandingkan</a>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Tentang Section -->
+
+        <!--Tentang Section-->
         <div id="tentang" class="section">
-            <h2 class="section-title">Tentang Kami</h2>
-            
+            <h2 class="section-title">Tentang saya</h2>
+
             <div class="section-content">
-                <p>Ini adalah lembar tentang.</p>
+                <p>Anda ingin tahu siapa saya?</p>
             </div>
-            
+
             <h3 class="section-title">Tim Kami</h3>
             
             <div class="team-grid">
@@ -574,9 +543,65 @@
                 </div>
             </div>
         </div>
+
+        <!--Arah Kiblat Section-->
+        <div id="arah" class="section">
+            <h2 class="section-title">Membandingkan Arah Kiblat</h2>
+
+            <div class="section-content">
+                <p>Kenapa saya membuat perbandingan rumus arah kiblat berdasarkan bumi bulat dan datar? Tanya langsung orangnya</p>
+            </div>
+            <div class="back-arah">
+                    <h3>A. Input Koordinat Lokasi</h3>
+                        <table>
+                            <tr>
+                                <th>Nama Lokasi</th>
+                                <th>Lintang (Latitude)</th>
+                                <th>Bujur (Longtitude)</th>
+                            </tr>
+                            <tr>
+                                <th><input type="text" id="namaLokasi"></th>
+                                <th><input type="number" id="latitude" step="any"></th>
+                                <th><input type="number" id="longitude" step="any"></th>
+                            </tr>
+                        </table>
+                            <button onclick="hitungKiblat()">Hitung Arah Kiblat</button>
+
+                    <h3>B. Hasil Perhitungan</h3>
+                        <table>
+                            <tr>
+                                <th>Rumus Bumi Bulat</th>
+                                <th>Rumus Bumi Datar</th>
+                                <th>Selisih (|Bulat - Datar|)</th>
+                            </tr>
+                            <tr>
+                                <td id="hasilBulat">-</td>
+                                <td id="hasilDatar">-</td>
+                                <td id="selisih">-</td>
+                            </tr>
+                        </table>
+
+                    <h3>C. Tabel Hasil Lokasi</h3>
+                        <table id="tabelHasil">
+                            <head>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Lokasi</th>
+                                    <th>Rumus Bumi Bulat</th>
+                                    <th>Rumus Bumi Datar</th>
+                                    <th>Perbedaan</th>
+                                </tr>
+                            </head>
+                            <body></body>
+                        </table>
+                </div>
+            <div>
+                <a href="#" id="arah2" class="nav-link" data-section="karya">Kembali</a>
+            </div>
+        </div>
     </div>
-    
-    <!-- Footer -->
+
+    <!--Footer-->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -587,10 +612,9 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Menu</h3>
                     <ul class="footer-links">
@@ -599,14 +623,14 @@
                         <li><a href="#">Tentang</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Layanan</h3>
                     <ul class="footer-links">
                         <li><a href="#">Mau apa?</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Kontak</h3>
                     <div class="footer-contact">
@@ -616,14 +640,61 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Ukeiz Buzz. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <script>
+        let counter = 1;
+
+        function hitungKiblat() {
+        const nama = document.getElementById("namaLokasi").value || `Lokasi ${counter}`;
+        const lat = parseFloat(document.getElementById("latitude").value);
+        const lon = parseFloat(document.getElementById("longitude").value);
+
+        const LQ = 21.4225; // Lintang Ka'bah
+        const BQ = 39.8262; // Bujur Ka'bah
+
+        const degToRad = deg => deg * Math.PI / 180;
+        const radToDeg = rad => rad * 180 / Math.PI;
+
+        const lat_rad = degToRad(lat);
+        const latQ_rad = degToRad(LQ);
+        const deltaB_rad = degToRad(BQ - lon);
+
+        // Rumus Bumi Bulat
+        const y1 = Math.sin(deltaB_rad);
+        const x1 = Math.cos(lat_rad) * Math.tan(latQ_rad) - Math.sin(lat_rad) * Math.cos(deltaB_rad);
+        let kiblatBulat = radToDeg(Math.atan2(y1, x1));
+        if (kiblatBulat < 0) kiblatBulat += 360;
+
+        // Rumus Bumi Datar
+        const deltaB = degToRad(lon - BQ);
+        const atas = (90 - LQ) * Math.sin(deltaB);
+        const bawah = LQ * Math.cos(deltaB) - lat + 90 * (1 - Math.cos(deltaB));
+        let kiblatDatar = 360 - radToDeg(Math.atan2(atas, bawah));
+        if (kiblatDatar < 0) kiblatDatar += 360;
+
+        const selisih = Math.abs(kiblatBulat - kiblatDatar);
+
+        document.getElementById("hasilBulat").textContent = kiblatBulat.toFixed(4) + "°";
+        document.getElementById("hasilDatar").textContent = kiblatDatar.toFixed(4) + "°";
+        document.getElementById("selisih").textContent = selisih.toFixed(4) + "°";
+
+         row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${counter++}</td>
+            <td>${nama}</td>
+            <td>${kiblatBulat.toFixed(4)}&deg;</td>
+            <td>${kiblatDatar.toFixed(4)}&deg;</td>
+            <td>${selisih.toFixed(4)}&deg;</td>
+        `;
+        document.querySelector("#tabelHasil tbody").appendChild(row);
+        }
+
         $(document).ready(function() {
             // Toggle navbar mobile
             $('#hamburger').click(function() {
@@ -677,13 +748,16 @@
             $('a[href^="#"]').not('.nav-link').click(function(e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
-                if (target === '#proyek1') {
-                    showSection('proyek1');
+                if (target === '#karya') {
+                    showSection('karya');
                     $('html, body').animate({
                         scrollTop: $(target).offset().top - 100
                     }, 500);
                 }
             });
+
+            // Mencoba mengfungsikan tombol arah kiblat
+            
         });
     </script>
 </body>
