@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Ukeiz Buzz">
-    <meta property="og:description" content="Setidaknya Saya Mencoba.">
-    <meta property="og:image" content="https://github.com/Mukhlish212121/Mukhlish/blob/main/Wallpaper_0000_Screenshot%20(201).jpg?raw=true">
-    <meta property="og:url" content="https://mukhlish212121.github.io/Mukhlish/">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ukeiz Buzz" />
+    <meta property="og:description" content="Setidaknya Saya Mencoba." />
+    <meta property="og:image" content="https://github.com/Mukhlish212121/Mukhlish/blob/main/Wallpaper_0000_Screenshot%20(201).jpg?raw=true" />
+    <meta property="og:url" content="https://mukhlish212121.github.io/Mukhlish/" />
+    <meta property="og:type" content="website" />
     <title>Ukeiz Buzz</title>
+    <link rel="icon" type="image/png" href="pp IG.png" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
@@ -55,7 +56,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
+        padding: 15px 0;
       }
 
       .logo {
@@ -182,7 +183,7 @@
       }
 
       .hero-content {
-        max-width: 800px;
+        max-width: 768px;
         padding: 0 20px;
       }
 
@@ -531,7 +532,8 @@
           font-size: 1.4rem;
         }
 
-        .footer-about {
+        .footer-about,
+        .footer-links {
           font-size: 0.8rem;
         }
 
@@ -574,12 +576,12 @@
         </div>
       </div>
 
-      <!-- Proyek 1 Section -->
+      <!-- Section Project -->
       <div id="my-project" class="section">
         <h2 class="section-title">Karya Saya</h2>
 
         <div class="section-content">
-          <p>Bagian ini adalah daftar berbagai proyek yang telah saya buat yag kemudian menjadi sebuah karya</p>
+          <p>Bagian ini adalah daftar berbagai proyek yang telah saya buat yang kemudian menjadi sebuah karya</p>
         </div>
 
         <div class="project-grid">
@@ -589,46 +591,33 @@
               <h3>Rumus Arah Kiblat</h3>
 
               <p>Membadingkan arah kiblat antara rumus bumi bulat dan bumi datar</p>
-              <a href="#arah-kiblat" class="btn">Ayo Membandingkan</a>
+              <a href="#arah-kiblat" class="btn section-link" data-section="arah-kiblat">Ayo Membandingkan</a>
             </div>
           </div>
         </div>
       </div>
 
-
-    <!-- Arah Kiblat Section -->
+      <!-- Section Arah Kiblat: Project 1 -->
       <div id="arah-kiblat" class="section">
-        <h2 class="section-title">Arah Kiblat</h2>
+        <h2 class="section-title">Rumus Arah Kiblat</h2>
 
         <div class="section-content">
-          <p>
-            Arah kiblat adalah arah yang dituju oleh umat Islam ketika melaksanakan salat. Arah ini mengarah ke Ka'bah di Masjidil Haram, Mekah, Arab Saudi. Penentuan arah kiblat sangat penting dalam praktik ibadah umat Islam di seluruh dunia.
-          </p>
-          <p>
-            Dalam menentukan arah kiblat, umat Islam dapat menggunakan berbagai metode, termasuk kompas kiblat, aplikasi ponsel, atau perhitungan matematis berdasarkan posisi geografis mereka.
-          </p>
-
-          <div>
-          <a href="#my-project" class="btn">Kembali</a>
-          </div>
+          <p>Bagian ini menjelaskan tentang rumus arah kiblat yang membandingkan antara bumi bulat dan bumi datar.</p>
         </div>
+        <div>
+          <a href="#my-project" class="btn section-link" data-section="my-project">Kembali</a>
+        </div>
+      </div>
 
       <!-- Tentang Section -->
       <div id="tentang" class="section">
-        <h2 class="section-title">Tentang Kami</h2>
+        <h2 class="section-title">Tentang Saya</h2>
 
         <div class="section-content">
-          <p>
-            Ini adalah lembar tentang. Di BrownWeb, kami adalah tim yang berdedikasi untuk menciptakan produk berkualitas dengan estetika alami dan tradisional. Dengan pengalaman yang luas dalam berbagai bidang, selalu berupaya memberikan
-            hasil terbaik bagi setiap proyek yang kami tangani.
-          </p>
-          <p>
-            Kami percaya bahwa keindahan berasal dari keseimbangan antara gaya modern dan elemen tradisional. Melalui inovasi dan kolaborasi, kami berusaha untuk menjadi bagian dari solusi global untuk keseimbangan antara gaya hidup modern
-            dan alam.
-          </p>
+          <p>Anda ingin tahu siapa saya?</p>
         </div>
 
-        <h3 class="section-title">Tim Kami</h3>
+        <h3 class="section-title">Tim Saya</h3>
 
         <div class="team-grid">
           <div class="team-member">
@@ -655,15 +644,6 @@
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-          </div>
-
-          <div>
-            <h3 class="footer-title">Menu</h3>
-            <ul class="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Karya Saya</a></li>
-              <li><a href="#">Tentang</a></li>
-            </ul>
           </div>
 
           <div>
@@ -749,17 +729,11 @@
             }
           });
 
-          // Menampilkan arah kiblat
-          $('[href="#arah-kiblat"]').click(function (e) {
-            e.preventDefault();
-            showSection("arah-kiblat");
-            $("html, body").animate(
-              {
-                scrollTop: $("#arah-kiblat").offset().top - 100,
-              },
-              500
-            );
-          });
+        $(".section-link").click(function (e) {
+          e.preventDefault();
+          var sectionId = $(this).attr("data-section");
+          showSection(sectionId);
+        });
       });
     </script>
   </body>
