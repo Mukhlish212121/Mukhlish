@@ -37,6 +37,14 @@
         background-color: #f5f5dc;
       }
 
+      p {
+        margin: 10px 25px;
+      }
+
+      .project-info p {
+        margin: 10px 0;
+      }
+
       .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -158,6 +166,31 @@
         background-color: var(--primary-color);
       }
 
+      .section-title-2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+        position: relative;
+        display: inline-block;
+        padding: 0 100px;
+      }
+
+      .section-title-2 {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .section-title-2 .toggle-icon {
+        font-size: 1rem;
+        margin-left: 10px;
+        transition: transform 0.2s;
+      }
+
+      .section-title-2.open .toggle-icon {
+        transform: rotate(-180deg);
+      }
+
       .section-content {
         font-size: 1.1rem;
         color: var(--gray-color);
@@ -168,7 +201,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Wallpaper_0000_Screenshot (201).jpg");
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Gambar WhatsApp 2025-06-16 pukul 13.17.10_d40b168e.jpg");
         background-size: cover;
         background-position: center;
         height: 400px;
@@ -211,6 +244,10 @@
         border: 2px solid var(--primary-color);
       }
 
+      .btn-exit {
+        text-align: center;
+      }
+
       .btn:hover {
         background-color: transparent;
         color: var(--primary-color);
@@ -246,6 +283,7 @@
 
       .project-info {
         padding: 20px;
+        text-align: left;
       }
 
       .project-info h3 {
@@ -256,6 +294,66 @@
       .project-info p {
         color: var(--gray-color);
         margin-bottom: 15px;
+      }
+
+      /* Arah Kiblat Section */
+      .arah-eksplain {
+        display: none;
+      }
+
+      .arah-eksplain.active {
+        display: block;
+      }
+
+      .arah-input h3,
+      .arah-input p {
+        color: var(--dark-color);
+        margin: 10px 0px;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: var(--light-color);
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid var(--primary-light);
+        padding: 8px;
+        text-align: center;
+        color: var(--dark-color);
+      }
+
+      .table th {
+        background-color: var(--primary-color);
+        color: var(--light-color);
+      }
+
+      #table-input {
+        border-collapse: collapse;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      #table-input th,
+      #table-input td {
+        padding: 10px 15px;
+        text-align: center;
+      }
+
+      #table-input input {
+        padding: 8px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      #table-input input:focus {
+        border-color: var(--primary-color);
+        outline: none;
       }
 
       /* About Section */
@@ -450,6 +548,9 @@
       }
 
       @media (max-width: 768px) {
+        .btn-exit {
+          text-align: left;
+        }
         .logo {
           font-size: 1.5rem;
           padding: 0px 15px;
@@ -527,6 +628,21 @@
           gap: 20px;
         }
 
+        .project-img {
+          height: 150px;
+        }
+        .project-info h3 {
+          font-size: 1rem;
+        }
+
+        .project-info p {
+          font-size: 0.9rem;
+        }
+
+        .project-info a {
+          font-size: 0.9rem;
+        }
+
         /* Footer Section */
         .footer-logo {
           font-size: 1.4rem;
@@ -539,6 +655,16 @@
 
         .footer-title {
           font-size: 1rem;
+        }
+
+        /* Arah Kiblat */
+        .arah-eksplain {
+          font-size: 0.8rem;
+        }
+
+        .section-title-2 {
+          font-size: 0.9rem;
+          padding: 0 0px;
         }
       }
     </style>
@@ -588,8 +714,7 @@
           <div class="project-card">
             <img src="Screenshot 2025-07-02 221357.png" alt="Menentukan Arah Kiblat" class="project-img" />
             <div class="project-info">
-              <h3>Rumus Arah Kiblat</h3>
-
+              <h3>Arah Kiblat</h3>
               <p>Membadingkan arah kiblat antara rumus bumi bulat dan bumi datar</p>
               <a href="#arah-kiblat" class="btn section-link" data-section="arah-kiblat">Ayo Membandingkan</a>
             </div>
@@ -598,14 +723,118 @@
       </div>
 
       <!-- Section Arah Kiblat: Project 1 -->
-      <div id="arah-kiblat" class="section">
-        <h2 class="section-title">Rumus Arah Kiblat</h2>
-
+      <div id="arah-kiblat" class="section active">
+        <h2 class="section-title">Arah Kiblat</h2>
         <div class="section-content">
-          <p>Bagian ini menjelaskan tentang rumus arah kiblat yang membandingkan antara bumi bulat dan bumi datar.</p>
-        </div>
-        <div>
-          <a href="#my-project" class="btn section-link" data-section="my-project">Kembali</a>
+          <div>
+            <h2 id="part-a" class="section-title-2">
+              A. Kenapa saya membuat proyek ini?
+              <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </h2>
+          </div>
+
+          <div class="arah-eksplain">
+            <p>
+              Karena ini merupakan salah satu bagian dari hasil karya tulis ilmiah saya ketika saya belajar di Pondok Pesantren 153 Al-Firdaus. Proyek ini merupakan bagian yang tidak dijelaskan di dalamnya sehingga bagian ini akan
+              menjelaskan pembuktian penggunaan rumus yang saya tulis.
+            </p>
+            <p>
+              Mengenal lebih jauh karya tulis ilmiah saya. Karya tulis ini membahas Perbedaan pendapat mengenai bentuk Bumi terjadi pada setiap zaman. perbedaan pendapat ini dikuatkan dengan argumen-argumen yang dapat diterima secara ilmiah
+              di kalangan ilmuan Sains bahkan pemuka agama. Hal ini sangat penting, karena akan berpengaruh kepada rumusan penentuan arah kiblat yang berbeda.
+            </p>
+            <p>
+              Tujuan dari penelitian ini adalah untuk memahami perbedaan pendapat Imam Al-Maḥallī dan Imam Al-Alūsī dalam penafsiran Q.S. Al-Gāsyiyyah: 20 mengenai bentuk Bumi, dan pengaruhnya kepada penentuan arah kiblat dari kedua
+              pendapat yang berbeda. Dalam penelitian ini penulis menggunakan metode kualitatif deskriptif dengan Teknik studi kepustakaan guna menghasilkan analisa yang lebih terstruktur mengenai tafsir Q.S. Al-Gāsyiyyah: 20 dan rumusan
+              persamaan arah kiblat.
+            </p>
+            <p>
+              Penelitian ini menerangkan jika pemahaman Imam Al-Maḥallī diterima, yaitu bentuk Bumi datar maka dalam penentuannya akan menggunakan sistem koordinat kartesius dengan menggunakan persamaan segitiga planar. Jika pemahaman Imam
+              Al-Alūsī diterima, yaitu bentuk Bumi bulat maka dalam penentuannya akan menggunakan sistem koordinat Latitude-Longitude dengan menggunakan persamaan rumus segitiga bola
+            </p>
+          </div>
+
+          <div>
+            <h2 class="section-title-2">B. Membandingkan Hasil Rumus</h2>
+          </div>
+          <div class="arah-input">
+            <h3>1. Input Koordinat Lokasi</h3>
+            <p>Contoh Koordinat:</p>
+            <table id="arah-contoh" class="table">
+              <tr>
+                <th>Kota</th>
+                <th>Lintang</th>
+                <th>Bujur</th>
+              </tr>
+              <tr>
+                <td>Bandung</td>
+                <td>-6.914744</td>
+                <td>107.609810</td>
+              </tr>
+              <tr>
+                <td>Jakarta</td>
+                <td>-6.208763</td>
+                <td>106.845599</td>
+              </tr>
+              <tr>
+                <td>Yogyakarta</td>
+                <td>-7.795580</td>
+                <td>110.369490</td>
+              </tr>
+              <tr>
+                <td>Cimahi</td>
+                <td>-6.895171</td>
+                <td>107.570353</td>
+              </tr>
+            </table>
+            <form>
+              <table id="table-input" class="table">
+                <tr>
+                  <th>Kota</th>
+                  <th>Lintang</th>
+                  <th>Bujur</th>
+                </tr>
+                <tr>
+                  <td><input type="text" id="namaLokasi" placeholder="Bandung" /></td>
+                  <td><input type="number" id="latitude" step="any" placeholder="-6.9175" /></td>
+                  <td><input type="number" id="longitude" step="any" placeholder="107.6191" /></td>
+                </tr>
+              </table>
+              <div class="btn-container">
+                <button onclick="hitungKiblat()" type="button" class="btn">Hitung Arah Kiblat</button>
+              </div>
+            </form>
+            <h3>2. Hasil Perhitungan</h3>
+            <table class="table">
+              <tr>
+                <th>Rumus Bumi Bulat</th>
+                <th>Rumus Bumi Datar</th>
+                <th>Selisih (|Bulat - Datar|)</th>
+              </tr>
+              <tr>
+                <td id="hasilBulat">-</td>
+                <td id="hasilDatar">-</td>
+                <td id="selisih">-</td>
+              </tr>
+            </table>
+
+            <h3>C. Tabel Hasil Lokasi</h3>
+            <table class="table" id="tabelHasil">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Lokasi</th>
+                  <th>Bumi Bulat</th>
+                  <th>Bumi Datar</th>
+                  <th>Perbedaan</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="btn-exit">
+            <a href="#my-project" class="btn section-link" data-section="my-project">Kembali</a>
+          </div>
         </div>
       </div>
 
@@ -625,7 +854,7 @@
               <img src="pp IG.png" alt="Anggota Tim 1" />
             </div>
             <div class="team-name">Mukhlish</div>
-            <div class="team-role">Sedirian kok</div>
+            <div class="team-role">Pemilik</div>
           </div>
         </div>
       </div>
@@ -656,7 +885,7 @@
           <div>
             <h3 class="footer-title">Kontak</h3>
             <div class="footer-contact">
-              <p><i class="fas fa-map-marker-alt"></i> Jl. Pojok Selatan 1 Rt. 03 Rw. 07 Kel. Setimanah Kec. Cimahi Tengah Kot. Cimahi Prov. Jawa Barat Indonesia</p>
+              <p><i class="fas fa-map-marker-alt"></i> Jl. Pojok Selatan 1 Rt. 03 Rw. 07 Kel. Setimanah Kec. Cimahi Tengah</p>
               <p><i class="fas fa-phone"></i> +62 831 1281 5938</p>
               <p><i class="fas fa-envelope"></i> mukhlish21utama@gmail.com</p>
             </div>
@@ -670,6 +899,59 @@
     </footer>
 
     <script>
+      let counter = 1; // Tambahkan di luar fungsi hitungKiblat
+
+      function hitungKiblat() {
+        const nama = document.getElementById("namaLokasi").value || `Lokasi ${counter}`;
+        const lat = parseFloat(document.getElementById("latitude").value);
+        const lon = parseFloat(document.getElementById("longitude").value);
+
+        // Validasi input
+        if (isNaN(lat) || isNaN(lon)) {
+          alert("Masukkan lintang dan bujur yang valid!");
+          return;
+        }
+
+        const LQ = 21.4225; // Lintang Ka'bah
+        const BQ = 39.8262; // Bujur Ka'bah
+
+        const degToRad = (deg) => (deg * Math.PI) / 180;
+        const radToDeg = (rad) => (rad * 180) / Math.PI;
+
+        const lat_rad = degToRad(lat);
+        const latQ_rad = degToRad(LQ);
+        const deltaB_rad = degToRad(BQ - lon);
+
+        // Rumus Bumi Bulat
+        const y1 = Math.sin(deltaB_rad);
+        const x1 = Math.cos(lat_rad) * Math.tan(latQ_rad) - Math.sin(lat_rad) * Math.cos(deltaB_rad);
+        let kiblatBulat = radToDeg(Math.atan2(y1, x1));
+        if (kiblatBulat < 0) kiblatBulat += 360;
+
+        // Rumus Bumi Datar
+        const deltaB = degToRad(lon - BQ);
+        const atas = (90 - LQ) * Math.sin(deltaB);
+        const bawah = LQ * Math.cos(deltaB) - lat + 90 * (1 - Math.cos(deltaB));
+        let kiblatDatar = 360 - radToDeg(Math.atan2(atas, bawah));
+        if (kiblatDatar < 0) kiblatDatar += 360;
+
+        const selisih = Math.abs(kiblatBulat - kiblatDatar);
+
+        document.getElementById("hasilBulat").textContent = kiblatBulat.toFixed(4) + "°";
+        document.getElementById("hasilDatar").textContent = kiblatDatar.toFixed(4) + "°";
+        document.getElementById("selisih").textContent = selisih.toFixed(4) + "°";
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${counter++}</td>
+          <td>${nama}</td>
+          <td>${kiblatBulat.toFixed(4)}&deg;</td>
+          <td>${kiblatDatar.toFixed(4)}&deg;</td>
+          <td>${selisih.toFixed(4)}&deg;</td>
+        `;
+        document.querySelector("#tabelHasil tbody").appendChild(row);
+      }
+
       $(document).ready(function () {
         // Toggle navbar mobile
         $("#hamburger").click(function () {
@@ -734,6 +1016,16 @@
           var sectionId = $(this).attr("data-section");
           showSection(sectionId);
         });
+
+        $("#part-a")
+          .css("cursor", "pointer")
+          .click(function () {
+            $(".arah-eksplain").slideToggle(300);
+            $(this).toggleClass("open");
+            // Ganti ikon panah Font Awesome
+            var icon = $(this).find(".toggle-icon i");
+            icon.toggleClass("fa-chevron-down fa-chevron-up");
+          });
       });
     </script>
   </body>
